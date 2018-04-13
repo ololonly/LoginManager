@@ -5,8 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoginManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="206.065" Width="506.361">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lb" Content="Введите пароль для входа в программу" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+        <PasswordBox x:Name="passwordTextBox" HorizontalAlignment="Center" Height="23" VerticalAlignment="Center" Width="292" Grid.Row="1"/>
+        <WrapPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="loginButton" Content="Ввод" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" Width="100" Height="30"/>
+            <Button x:Name="exitButton" Content="Выход" HorizontalAlignment="Left" Grid.Row="2" Margin=" 5" Width="100" Height="30"/>
+        </WrapPanel>
+        
+        <!-- It's important that this is in the end of the XAML as it needs to be on top of everything else! -->
+        <Grid x:Name="InputBox" Visibility="Collapsed" Grid.RowSpan="3">
+            <Grid Background="Black" Opacity="0.5"/>
+            <Border
+                MinWidth="250"
+                Background="Orange" 
+                BorderBrush="Black" 
+                BorderThickness="1" 
+                CornerRadius="0,55,0,55" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center">
+                <StackPanel>
+                    <TextBlock x:Name="helloTextBlock" Margin="5" Text="Программа запущена впервые" FontWeight="Bold" FontFamily="Cambria" />
+                    <TextBlock Margin="10" Text="Введите новый пароль" FontWeight="Bold" FontFamily="Cambria" />
+                    <PasswordBox MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InputTextBox"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="registryButton" Margin="5" Content="Ввод" Background="{x:Null}"/>
+                        <Button x:Name="cancelButton" Margin="5" Content="Отмена" Background="{x:Null}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <!-- It's important that this is in the end of the XAML as it needs to be on top of everything else! -->
+        <Grid x:Name="StartupBox" Visibility="Collapsed" Grid.RowSpan="3">
+            <Grid Background="Black" Opacity="0.5"/>
+            <Border
+                MinWidth="350"
+                Background="Orange" 
+                BorderBrush="Black" 
+                BorderThickness="1" 
+                CornerRadius="0,55,0,55" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center">
+                <StackPanel>
+                    <TextBlock Margin="5" Text="Войти в приложение или сменить пароль?" FontWeight="Bold" FontFamily="Cambria" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="startButton" Margin="5" Content="Вход" Background="{x:Null}"/>
+                        <Button x:Name="changePasswordButton" Margin="5" Content="Сменить пароль" Background="{x:Null}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
         
     </Grid>
 </Window>
