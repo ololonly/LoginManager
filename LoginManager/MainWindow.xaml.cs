@@ -62,6 +62,10 @@ namespace LoginManager
                 {
                     StartupBox.Visibility = Visibility.Visible;
                 }
+                else
+                {
+                    MessageBox.Show("Неверный пароль!", "Ошибка!",MessageBoxButton.OK,MessageBoxImage.Error);
+                }
                 reg.Close();
             };
 
