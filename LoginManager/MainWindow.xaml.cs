@@ -40,6 +40,7 @@ namespace LoginManager
 
             registryButton.Click += (s, e) =>
             {
+
                 var reg = Registry.CurrentUser.OpenSubKey(registryPath, true);
                 if (reg == null) reg = Registry.CurrentUser.CreateSubKey(registryPath, true);
                 reg.SetValue("password", HashPassword(InputTextBox.Password));
